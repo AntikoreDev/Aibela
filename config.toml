@@ -1,0 +1,23 @@
+[host]
+# default port: 3621
+port = "3621" 
+# default domain: "" (127.0.0.1)
+domain = "127.0.0.1"
+
+[admin]
+# default user: admin
+admin_user = "admin"
+# default pass: admin
+admin_pass = "admin"
+
+[filesystem]
+# default server root: ./server_data
+server_root = "./server_data"
+
+[meta]
+# default name: "My feeder"
+name = "My feeder"
+# default description: "This feeder serves my videos!"
+description = "This feeder serves my videos!"
+# default owner: ""
+owner = ""
