@@ -69,3 +69,10 @@ bun run index.ts
 
 ## To Do
 - We are still in need of an Aibela client that allows users to watch videos from the network.
+
+## Community
+Join our community on Discord, for a free and better world (and internet): [Aibela Community](https://discord.gg/W4R4vDTT)
+
+## Credits
+Project originally started by [@cixfra](https://github.com/cixfra) and [@AntikoreDev](https://github.com/AntikoreDev). For reasons repository was reuploaded, all 
+contributions from the first commit were made by both of us.
