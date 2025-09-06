@@ -107,7 +107,7 @@ _This applies mainly to official implementations of the project, forks or other 
 - Server should _only_ store data given by the server owner. This is not only for privacy purposes but also to avoid filling people's server or computers with external stuff, requiring a constant check to keep up without filling storage. That's why this implementation doesn't include a system for likes or comments
 
 ## ✅ To Do
-- We are still in need of an Aibela client that allows users to watch videos from the network.
+- We are still in need of an Aibela client that allows users to watch videos from servers.
 
 ## 👥 Community
 Join our community on Discord, for a free and better world (and internet): [Aibela Community](https://discord.gg/W4R4vDTT)
