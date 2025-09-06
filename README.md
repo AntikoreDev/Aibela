@@ -9,6 +9,19 @@ Aibela
 
 **Note:** We are not responsible nor condone any wrong usage on the contents of this repository.
 
+### Index 
+- [Aibela Ecosystem](#-aibela-ecosystem)<br>
+- [Usage](#️-usage)<br>
+  - [As a content creator](#as-a-content-creator)
+  - [As an average user](#as-an-average-user)
+- [Self Host](#-self-host)
+- [Contribute](#-contribute)
+- [To Do](#-to-do)
+- [Community](#-community)
+- [FAQ](#-faq)
+- [Credits](#️-credits)
+
+
 ## 🌿 Aibela Ecosystem
 The way this works is really simple: In one side you have feeders, in the other side you have clients. 
 
