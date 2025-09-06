@@ -1,7 +1,7 @@
-import { db } from "../database/db.ts";
+import { db } from "../../database/db.ts";
 import { sql, desc } from "drizzle-orm";
-import * as schema from "../database/schema.ts";
-import { check_auth_token, name_check } from "../commons/commons.ts";
+import * as schema from "../../database/schema.ts";
+import { check_auth_token, name_check } from "../../commons/commons.ts";
 import { randomBytes } from "node:crypto";
 import path from "node:path";
 import config from "../config.toml";

@@ -1,4 +1,4 @@
-import { access_tokens } from "../routes/auth.ts";
+import { access_tokens } from "../routes/feeder/auth.ts";
 
 export const name_check = (str: string): boolean => /[^a-zA-Z0-9_]/gm.test(str);
 

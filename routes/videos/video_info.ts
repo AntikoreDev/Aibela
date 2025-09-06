@@ -1,7 +1,7 @@
-import { db } from "../database/db.ts";
+import { db } from "../../database/db.ts";
 import { sql } from "drizzle-orm";
-import * as schema from "../database/schema.ts";
-import { name_check } from "../commons/commons.ts";
+import * as schema from "../../database/schema.ts";
+import { name_check } from "../../commons/commons.ts";
 
 export async function r_video_info_get(req: any){
 	

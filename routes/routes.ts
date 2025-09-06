@@ -1,13 +1,13 @@
-import { r_channels_get, r_channels_post } from "./channels.ts"
-import { r_channel_get, r_channel_put } from "./channel.ts"
-import { r_auth_post } from "./auth.ts"
-import { r_videos_post, r_videos_get, r_allvideos_get } from "./videos.ts"
-import { r_video_get, r_video_put } from "./video.ts"
-import { r_video_info_get } from "./video_info.ts"
-import { r_feeder_get } from "./feeder.ts"
-import { r_video_thumb_get } from "./thumbnail.ts"
-import { r_channel_icon_get, r_channel_icon_put } from "./icon.ts"
-import { r_meta_get } from "./meta.ts"
+import { r_channels_get, r_channels_post } from "./channels/channels.ts"
+import { r_channel_get, r_channel_put } from "./channels/channel.ts"
+import { r_auth_post } from "./feeder/auth.ts"
+import { r_videos_post, r_videos_get, r_allvideos_get } from "./videos/videos.ts"
+import { r_video_get, r_video_put } from "./videos/video.ts"
+import { r_video_info_get } from "./videos/video_info.ts"
+import { r_feeder_get } from "./feeder/feeder.ts"
+import { r_video_thumb_get } from "./videos/thumbnail.ts"
+import { r_channel_icon_get, r_channel_icon_put } from "./channels/icon.ts"
+import { r_meta_get } from "./feeder/meta.ts"
 
 export const routes = {
 	"/auth": {

@@ -1,10 +1,10 @@
 import type { BunRequest } from "bun"
-import { db } from "../database/db.ts"
-import * as schema from "../database/schema.ts"
+import { db } from "../../database/db.ts"
+import * as schema from "../../database/schema.ts"
 import { sql } from "drizzle-orm"
 import { mkdir } from "node:fs/promises"
-import { name_check } from "../commons/commons.ts"
-import { check_auth_token } from "../commons/commons.ts"
+import { name_check } from "../../commons/commons.ts"
+import { check_auth_token } from "../../commons/commons.ts"
 
 export async function r_channels_get()
 {
