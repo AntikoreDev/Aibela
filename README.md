@@ -1,6 +1,6 @@
 <h1 align="center">
 Aibela
-
+<br>
 <img alt="Discord" src="https://img.shields.io/discord/1380580477504589865?style=for-the-badge&label=Discord&color=5865f2">
 
 </h1>
