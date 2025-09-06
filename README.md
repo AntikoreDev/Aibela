@@ -87,6 +87,13 @@ Run the server like this
 bun run index.ts
 ```
 
+## Contribute
+
+### Development principles
+_This applies mainly to official implementations of the project, forks or other projects can do whatever they want_
+- To ease a transition to open source and decentralized options, implementations should be as visually as good as possible, specially to avoid giving the feeling of going through a dark and unknown place.
+- Server should _only_ store data given by the server owner. This is not only for privacy purposes but also to avoid filling people's server or computers with external stuff, requiring a constant check to keep up without filling storage. That's why this implementation doesn't include a system for likes or comments
+
 ## To Do
 - We are still in need of an Aibela client that allows users to watch videos from the network.
 
