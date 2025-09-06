@@ -40,3 +40,4 @@ drizzle
 
 .vscode
 *.mp4
+tests.ts
