@@ -47,7 +47,7 @@ curl -fsSL https://bun.sh/install | bash
 ### 2. Clone this repository
 Clone this repository to your server. 
 ```bash
-git clone https://github.com/cixfra/VideoServer.git
+git clone https://github.com/AntikoreDev/Aibela.git
 ```
 
 ### 3. Install dependencies
