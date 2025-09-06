@@ -34,11 +34,6 @@ Videos from _feeders_ (like this one) hosted on the internet can be accessed thr
 
 If you're not familiarized with anything of this, you just need to know that a good _client_ implementation generally holds a big _feeder repository_ by default to begin with and more can be added.
 
-## ❓ FAQ
-
-### What 'Aibela' stands for?
-_'Aibela'_ just stands for _'Happiness'_ in a [conlang](https://en.wikipedia.org/wiki/Constructed_language) made by [@AntikoreDev](https://github.com/AntikoreDev).
-
 ## 🛟 Self Host
 
 ### 1. Install Bun
@@ -102,6 +97,11 @@ _This applies mainly to official implementations of the project, forks or other 
 
 ## 👥 Community
 Join our community on Discord, for a free and better world (and internet): [Aibela Community](https://discord.gg/W4R4vDTT)
+
+## ❓ FAQ
+
+### What 'Aibela' stands for?
+_'Aibela'_ just stands for _'Happiness'_ in a [conlang](https://en.wikipedia.org/wiki/Constructed_language) made by [@AntikoreDev](https://github.com/AntikoreDev).
 
 ## ✍️ Credits
 Project originally started by [@cixfra](https://github.com/cixfra) and [@AntikoreDev](https://github.com/AntikoreDev). For reasons repository was reuploaded, all 
