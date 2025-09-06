@@ -4,7 +4,7 @@ import * as schema from "../../database/schema.ts";
 import { check_auth_token, name_check } from "../../commons/commons.ts";
 import { randomBytes } from "node:crypto";
 import path from "node:path";
-import config from "../config.toml";
+import config from "../../config.toml";
 
 export async function r_videos_post(req: any) {
 	const form_data: any = await req.formData();

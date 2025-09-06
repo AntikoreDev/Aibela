@@ -1,4 +1,4 @@
-import config from "../config.toml";
+import config from "../../config.toml";
 
 /*
  * This endpoints returns an auto-repo (a feeder repo with just this feeder listed). Intended for easy share and inclusion to clients.

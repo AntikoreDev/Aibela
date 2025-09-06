@@ -1,5 +1,5 @@
 import path from "path";
-import config from "../config.toml";
+import config from "../../config.toml";
 import { name_check } from "../../commons/commons.ts";
 import { db } from "../../database/db.ts";
 import * as schema from "../../database/schema.ts";

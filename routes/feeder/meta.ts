@@ -1,4 +1,4 @@
-import config from "../config.toml";
+import config from "../../config.toml";
 
 /**
  * This endpoint returns general information about a feeder

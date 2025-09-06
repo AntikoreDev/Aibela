@@ -1,4 +1,4 @@
-import config from "../config.toml";
+import config from "../../config.toml";
 import path from "path";
 import { db } from "../../database/db.ts";
 import * as schema from "../../database/schema.ts";
