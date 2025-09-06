@@ -1,9 +1,9 @@
 import type { BunRequest } from "bun";
-import { db } from "../database/db.ts"
-import * as schema from "../database/schema.ts"
+import { db } from "../../database/db.ts"
+import * as schema from "../../database/schema.ts"
 import { sql } from "drizzle-orm"
 import { randomBytes } from "node:crypto"
-import { name_check } from "../commons/commons.ts";
+import { name_check } from "../../commons/commons.ts";
 
 export const access_tokens = new Map();
 

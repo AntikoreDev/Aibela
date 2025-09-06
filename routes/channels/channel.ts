@@ -1,6 +1,6 @@
-import { check_auth_token, name_check } from "../commons/commons.ts";
-import { db } from "../database/db.ts"
-import * as schema from "../database/schema.ts"
+import { check_auth_token, name_check } from "../../commons/commons.ts";
+import { db } from "../../database/db.ts"
+import * as schema from "../../database/schema.ts"
 import { sql } from "drizzle-orm"
 
 export async function r_channel_get(req: any)

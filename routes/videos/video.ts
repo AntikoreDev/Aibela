@@ -1,8 +1,8 @@
 import config from "../config.toml";
 import path from "path";
-import { db } from "../database/db.ts";
-import * as schema from "../database/schema.ts";
-import { check_auth_token } from "../commons/commons.ts";
+import { db } from "../../database/db.ts";
+import * as schema from "../../database/schema.ts";
+import { check_auth_token } from "../../commons/commons.ts";
 import { sql } from "drizzle-orm";
 import { randomBytes } from "crypto";
 

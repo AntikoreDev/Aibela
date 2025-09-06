@@ -1,8 +1,8 @@
 import path from "path";
 import config from "../config.toml";
-import { name_check } from "../commons/commons";
-import { db } from "../database/db";
-import * as schema from "../database/schema.ts";
+import { name_check } from "../../commons/commons.ts";
+import { db } from "../../database/db.ts";
+import * as schema from "../../database/schema.ts";
 import { sql } from "drizzle-orm";
 
 /**
