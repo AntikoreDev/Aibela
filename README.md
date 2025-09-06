@@ -90,7 +90,7 @@ Run the server like this
 bun run index.ts
 ```
 
-## 🧱 aContribute
+## 🧱 Contribute
 
 ### Development principles
 _This applies mainly to official implementations of the project, forks or other projects can do whatever they want_
