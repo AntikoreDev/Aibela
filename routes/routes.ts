@@ -10,9 +10,23 @@ import { r_channel_icon_get, r_channel_icon_put } from "./channels/icon.ts"
 import { r_meta_get } from "./feeder/meta.ts"
 
 export const routes = {
+	
+	/**
+	 * Feeder related endpoints
+	 */
 	"/auth": {
 		POST: r_auth_post
 	},
+	"/feeder": {
+		GET: r_feeder_get,
+	},
+	"/meta": {
+		GET: r_meta_get
+	},
+
+	/**
+	 * Channel related endpoints
+	 */
 	"/channels": {
 		GET: r_channels_get,
 		POST: r_channels_post
@@ -25,6 +39,10 @@ export const routes = {
 		GET: r_channel_icon_get,
 		PUT: r_channel_icon_put
 	},
+
+	/**
+	 * Video related endpoints
+	 */
 	"/channels/:channel/videos": {
 		POST: r_videos_post,
 		GET: r_videos_get
@@ -42,10 +60,5 @@ export const routes = {
 	'/videos': {
 		GET: r_allvideos_get
 	},
-	"/feeder": {
-		GET: r_feeder_get,
-	},
-	"/meta": {
-		GET: r_meta_get
-	}
+
 }
