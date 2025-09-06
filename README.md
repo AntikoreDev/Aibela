@@ -35,6 +35,7 @@ Videos from _feeders_ (like this one) hosted on the internet can be accessed thr
 If you're not familiarized with anything of this, you just need to know that a good _client_ implementation generally holds a big _feeder repository_ by default to begin with and more can be added.
 
 ## 🛟 Self Host
+_This assumes you're using a linux server. For other systems please refer to [How to install outside of Linux](https://www.youtube.com/watch?v=dQw4w9WgXcQ)_
 
 ### 1. Install Bun
 Install [bun](https://bun.com/) on your server
