@@ -61,7 +61,27 @@ bun install
 ### 4. Configure the server
 You may edit the `config.toml` to fit your needs. Remember to enable nginx or apache in order to open ports correctly.
 
-### 5. Run
+### 5. Enable the site
+If you're using nginx, this should be the code for the site:
+```bash
+server {
+    listen 443 ssl;
+    server_name <server_name>;
+
+    location ~ /.git/ {
+        deny all;
+    }
+
+    location / {
+        proxy_pass http://localhost:3621;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+``` 
+Ensure to replace `<server name>` and the localhost port appropiately.
+
+### 6. Run
 Run the server like this
 ```bash
 bun run index.ts
