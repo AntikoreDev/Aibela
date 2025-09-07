@@ -29,6 +29,7 @@ if (file_exists == false)
 		{
 			username: "admin",
 			nickname: "admin",
+			language: "",
 			description: "Default super secret admin account :3",
 			visible: false,
 			api_key: await Bun.password.hash("admin")

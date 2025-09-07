@@ -49,6 +49,8 @@ export async function r_video_put(req: any){
 	const thumbnail = form_data.get("thumbnail");
 	const prev = form_data.get("prev");
 	const next = form_data.get("next");
+	const language = form_data.get("language");
+
 	let visible = form_data.get("visible");
 	visible = (visible == "false") ? false : true;
 
@@ -74,6 +76,9 @@ export async function r_video_put(req: any){
 
 	if (next != null)
 		await db.update(schema.videos).set({ next:next }).where(sql`${schema.videos.id} = ${video_id}`);
+
+	if (language != null)
+		await db.update(schema.videos).set({ language:language }).where(sql`${schema.videos.id} = ${video_id}`);
 
 	if (visible != null)
 	{

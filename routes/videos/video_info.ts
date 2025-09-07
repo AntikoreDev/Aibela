@@ -20,7 +20,8 @@ export async function r_video_info_get(req: any){
 		description: schema.videos.description,
 		upload_date: schema.videos.upload_date,
 		prev: schema.videos.prev,
-		next: schema.videos.next
+		next: schema.videos.next,
+		language: schema.videos.language
 	}).from(schema.videos).where(sql`${schema.videos.id} = ${video_id} and ${schema.videos.visible} = true and ${schema.videos.channel} 
 		= (select ${schema.channels.id} from ${schema.channels} where ${schema.channels.username} = ${username} and ${schema.channels.visible} = true)`);
 

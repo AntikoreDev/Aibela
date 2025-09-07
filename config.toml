@@ -21,3 +21,7 @@ name = "My feeder"
 description = "This feeder serves my videos!"
 # default owner: ""
 owner = ""
+
+[defaults]
+# default language: ""
+default_language = ""
