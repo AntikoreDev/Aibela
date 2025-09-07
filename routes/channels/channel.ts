@@ -12,7 +12,8 @@ export async function r_channel_get(req: any)
 	const [result] = await db.select({
 		username: schema.channels.username,
 		nickname: schema.channels.nickname,
-		description: schema.channels.description
+		description: schema.channels.description,
+		language: schema.channels.language
 	}).from(schema.channels).where(sql`${schema.channels.username} = ${channel} and ${schema.channels.visible} = true`);
 	
 	if (result == null) 
@@ -27,7 +28,7 @@ export async function r_channel_put(req: any)
 
 	// Params //
 	const { channel:username } = req.params; // Url
-	const { access_token, nickname, description, visible } = post; // Post
+	const { access_token, nickname, description, visible, language } = post; // Post
 	
 	if (username == null)
 		return new Response("Bad Request", { status: 400 });
@@ -50,6 +51,9 @@ export async function r_channel_put(req: any)
 
 	if (visible != null)
 		await db.update(schema.channels).set({ visible:visible }).where(sql`${schema.channels.username} = ${username}`);
+
+	if (language != null)
+		await db.update(schema.channels).set({ language:language }).where(sql`${schema.channels.username} = ${username}`);
 
 	return new Response("OK", { status: 200 });
 }

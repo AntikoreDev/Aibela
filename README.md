@@ -9,6 +9,19 @@ Aibela
 
 **Note:** We are not responsible nor condone any wrong usage on the contents of this repository.
 
+### Index 
+- [Aibela Ecosystem](#-aibela-ecosystem)<br>
+- [Usage](#️-usage)<br>
+  - [As a content creator](#as-a-content-creator)
+  - [As an average user](#as-an-average-user)
+- [Self Host](#-self-host)
+- [Contribute](#-contribute)
+- [To Do](#-to-do)
+- [Community](#-community)
+- [FAQ](#-faq)
+- [Credits](#️-credits)
+
+
 ## 🌿 Aibela Ecosystem
 The way this works is really simple: In one side you have feeders, in the other side you have clients. 
 
@@ -34,12 +47,8 @@ Videos from _feeders_ (like this one) hosted on the internet can be accessed thr
 
 If you're not familiarized with anything of this, you just need to know that a good _client_ implementation generally holds a big _feeder repository_ by default to begin with and more can be added.
 
-## ❓ FAQ
-
-### What 'Aibela' stands for?
-_'Aibela'_ just stands for _'Happiness'_ in a [conlang](https://en.wikipedia.org/wiki/Constructed_language) made by [@AntikoreDev](https://github.com/AntikoreDev).
-
 ## 🛟 Self Host
+_This assumes you're using a linux server. For other systems please refer to [How to install outside of Linux](https://www.youtube.com/watch?v=dQw4w9WgXcQ)_
 
 ### 1. Install Bun
 Install [bun](https://bun.com/) on your server
@@ -75,6 +84,10 @@ server {
         deny all;
     }
 
+	location = /config.toml {
+        deny all;
+    }
+
     location / {
         proxy_pass http://localhost:3621;
         proxy_set_header Host $host;
@@ -90,7 +103,7 @@ Run the server like this
 bun run index.ts
 ```
 
-## 🧱 aContribute
+## 🧱 Contribute
 
 ### Development principles
 _This applies mainly to official implementations of the project, forks or other projects can do whatever they want_
@@ -98,10 +111,21 @@ _This applies mainly to official implementations of the project, forks or other 
 - Server should _only_ store data given by the server owner. This is not only for privacy purposes but also to avoid filling people's server or computers with external stuff, requiring a constant check to keep up without filling storage. That's why this implementation doesn't include a system for likes or comments
 
 ## ✅ To Do
-- We are still in need of an Aibela client that allows users to watch videos from the network.
+- We are still in need of an Aibela client that allows users to watch videos from servers.
 
 ## 👥 Community
 Join our community on Discord, for a free and better world (and internet): [Aibela Community](https://discord.gg/W4R4vDTT)
+
+## ❓ FAQ
+
+### What 'Aibela' stands for?
+_'Aibela'_ just stands for _'Happiness'_ in a [conlang](https://en.wikipedia.org/wiki/Constructed_language) made by [@AntikoreDev](https://github.com/AntikoreDev).
+
+### What are the intentions of this project?
+Due to recent YouTube and governmental activities against free speech, and also YouTube fully bloating their website with tracking garbage, misleading ads, and other stuff, we decided this is something we must do. Decentralizing helps projects to be unmodifiable by governments or evildoers. We want the average user to use this to improve their technological health, avoiding services that worse up each day and become enshittened to get more money.
+
+This project **MUST NOT** be used to create a facade for harming content. We believe in a world where things can be good for everyone without need of controlling
+states. This is not a rule, its a basic principle.
 
 ## ✍️ Credits
 Project originally started by [@cixfra](https://github.com/cixfra) and [@AntikoreDev](https://github.com/AntikoreDev). For reasons repository was reuploaded, all 

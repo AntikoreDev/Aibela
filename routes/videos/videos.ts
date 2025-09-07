@@ -1,10 +1,10 @@
 import { db } from "../../database/db.ts";
 import { sql, desc } from "drizzle-orm";
 import * as schema from "../../database/schema.ts";
-import { check_auth_token, name_check } from "../../commons/commons.ts";
+import { check_auth_token, name_check, get_channel_language } from "../../commons/commons.ts";
 import { randomBytes } from "node:crypto";
 import path from "node:path";
-import config from "../config.toml";
+import config from "../../config.toml";
 
 export async function r_videos_post(req: any) {
 	const form_data: any = await req.formData();
@@ -20,6 +20,7 @@ export async function r_videos_post(req: any) {
 	const prev = form_data.get("prev");
 	const next = form_data.get("next");
 	const visible = form_data.get("visible") ?? true;
+	const language = form_data.get('language') ?? get_channel_language(channel_name);
 	
 	// Check auth token
 	if (access_token == null)
@@ -56,6 +57,7 @@ export async function r_videos_post(req: any) {
 			next: next,
 			visible: visible,
 			access_key: access_key,
+			language: language,
 			channel: channel.id,
 		}
 	]);	
@@ -100,6 +102,7 @@ export async function r_videos_get(req: any)
 		name: schema.videos.name,
 		title: schema.videos.title,
 		description: schema.videos.description,
+		language: schema.videos.language,
 		upload_date: schema.videos.upload_date,
 		prev: schema.videos.prev,
 		next: schema.videos.next,

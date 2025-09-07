@@ -5,12 +5,14 @@ import { sql } from "drizzle-orm"
 import { mkdir } from "node:fs/promises"
 import { name_check } from "../../commons/commons.ts"
 import { check_auth_token } from "../../commons/commons.ts"
+import config from "../../config.toml";
 
 export async function r_channels_get()
 {
 	const result = await db.select({
 		username: schema.channels.username,
 		nickname: schema.channels.nickname,
+		language: schema.channels.language,
 		description: schema.channels.description,
 	}).from(schema.channels).where(sql`${schema.channels.visible} = true`);
 	
@@ -24,6 +26,7 @@ export async function r_channels_post(req: BunRequest) {
 	const { access_token, username, description } = post;
 	const nickname = post.nickname ?? username;
 	const visible = post.visible ?? true;
+	const language = post.language ?? config.language.default_channel_language ?? "";
 
 	// Check if access token is provided
 	if (access_token == null)
@@ -49,6 +52,7 @@ export async function r_channels_post(req: BunRequest) {
 			username: username,
 			nickname: nickname,
 			description: description,
+			language: language,
 			visible: visible,
 			api_key: api_key
 		}]);
@@ -62,5 +66,5 @@ export async function r_channels_post(req: BunRequest) {
 	}
 
 	// Return created channel data
-	return Response.json({ username: username, nickname: nickname, description: description, visible: visible, api_key: api_key });
+	return Response.json({ username: username, nickname: nickname, language: language, description: description, visible: visible, api_key: api_key });
 }
