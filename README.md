@@ -121,6 +121,12 @@ Join our community on Discord, for a free and better world (and internet): [Aibe
 ### What 'Aibela' stands for?
 _'Aibela'_ just stands for _'Happiness'_ in a [conlang](https://en.wikipedia.org/wiki/Constructed_language) made by [@AntikoreDev](https://github.com/AntikoreDev).
 
+### What are the intentions of this project?
+Due to recent YouTube and governmental activities against free speech, and also YouTube fully bloating their website with tracking garbage, misleading ads, and other stuff, we decided this is something we must do. Decentralizing helps projects to be unmodifiable by governments or evildoers. We want the average user to use this to improve their technological health, avoiding services that worse up each day and become enshittened to get more money.
+
+This project **MUST NOT** be used to create a facade for harming content. We believe in a world where things can be good for everyone without need of controlling
+states. This is not a rule, its a basic principle.
+
 ## ✍️ Credits
 Project originally started by [@cixfra](https://github.com/cixfra) and [@AntikoreDev](https://github.com/AntikoreDev). For reasons repository was reuploaded, all 
 contributions from the first commit were made by both of us.
