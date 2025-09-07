@@ -71,7 +71,7 @@ bun install
 ```
 
 ### 4. Configure the server
-You may edit the `config.toml` to fit your needs. Remember to enable nginx or apache in order to open ports correctly.
+You may edit the `config.toml` to fit your needs. **Remember to change `admin_pass` with a new and big password to prevent unwanted remote access.**
 
 ### 5. Enable the site
 If you're using nginx, this should be the code for the site:
