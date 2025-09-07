@@ -84,6 +84,10 @@ server {
         deny all;
     }
 
+	location = /config.toml {
+        deny all;
+    }
+
     location / {
         proxy_pass http://localhost:3621;
         proxy_set_header Host $host;
