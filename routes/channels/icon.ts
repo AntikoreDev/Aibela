@@ -35,5 +35,16 @@ export async function r_channel_icon_get(req: any) {
 }
 
 export async function r_channel_icon_put(req: any) {
-	return new Response("Not implemented", { status: 501 });
+	const form_data = await req.formData();
+
+	const { channel: username } = req.params;
+	const icon = form_data.get("icon");
+
+	const icon_path = path.join(config.filesystem.server_root, `/channels/${username}/icon.png`);
+	if (icon != null)
+	{	
+		Bun.file(icon_path).write(icon);
+	}else{
+		Bun.file(icon_path).unlink();
+	}
 }
