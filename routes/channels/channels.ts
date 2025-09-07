@@ -27,7 +27,7 @@ export async function r_channels_post(req: BunRequest) {
 	const { access_token, username, description } = post;
 	const nickname = post.nickname ?? username;
 	const visible = post.visible ?? true;
-	const language = post.language ?? config.language.default_channel_language ?? "";
+	const language = post.language ?? config.defaults.default_language ?? "";
 
 	// Check if access token is provided
 	if (access_token == null)
