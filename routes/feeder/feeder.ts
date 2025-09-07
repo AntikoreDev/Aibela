@@ -5,7 +5,7 @@ import config from "../../config.toml";
  */
 export async function r_feeder_get(req: any)
 {
-	const { domain, port } = config.host;
-
-	return new Response(`${domain}:${port}`, { status: 200, headers: { "Content-Type": "text/plain" } });
+	const { domain, port, root_domain } = config.host;
+	const res = (root_domain != "" ? root_domain : `${domain}:${port}`);
+	return new Response(res, { status: 200, headers: { "Content-Type": "text/plain" } });
 }

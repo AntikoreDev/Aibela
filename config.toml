@@ -3,6 +3,8 @@
 port = "3621" 
 # default domain: "" (127.0.0.1)
 domain = "127.0.0.1"
+# default root domain: ""
+root_domain = ""
 
 [admin]
 # default user: admin
