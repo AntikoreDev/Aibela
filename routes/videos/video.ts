@@ -102,3 +102,8 @@ export async function r_video_put(req: any){
 		
 	return new Response("OK", { status: 200 });
 }
+
+
+export async function r_video_delete(req: any){
+	return new Response("Not implemented", { status: 501 });
+}

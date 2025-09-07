@@ -7,7 +7,7 @@ export const channels = sqliteTable("channels", {
 	nickname: text().notNull(),
 	description: text(),
 	visible: integer({ mode: "boolean" }).default(true),
-	language: text(),
+	language: text().default(''),
 	api_key: text(),
 });
 
@@ -17,7 +17,7 @@ export const videos = sqliteTable("videos", {
 	title: text().notNull(),
 	description: text(),
 	upload_date: text().default(sql`(CURRENT_TIMESTAMP)`),
-	language: text(),
+	language: text().default(''),
 	prev: integer({ mode: "number" }),
 	next: integer({ mode: "number" }),
 	visible: integer({ mode: "boolean" }).default(true),

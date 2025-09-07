@@ -1,15 +1,3 @@
-/*
-import { watch } from 'fs'
-const watcher = watch(import.meta.dir, (event, filename) => {
-	console.log(`Detected ${event} in ${filename}`);
-});
-
-process.on("SIGINT", () => {
-	console.log("Closing watcher...");
-	watcher.close();
-})
-*/
-
 // Import the API routes
 import { routes } from "./routes/routes.ts";
 import config from "./config.toml";
@@ -20,8 +8,21 @@ const PORT = config.host.port || 3621;
 Bun.serve({
 	port: PORT,
 	routes: routes,
+
+	// Added to calm down the wrath of the IDE
+	websocket: {
+		open(ws) {
+			console.log('Connected');
+		},
+		close(ws){
+			console.log('Disconnected');
+		},
+		message(ws, message){
+			console.log('Message');
+		}
+	},
 	fetch(req){
-		return new Response("OK", { status: 200, headers: { "Content-Type": "text/plain", 'Access-Control-Allow-Origin': '*' } });
+		return new Response("Method Not Allowed", { status: 405, headers: { 'Access-Control-Allow-Origin': '*' } });
 	}
 });
 

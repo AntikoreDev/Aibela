@@ -57,3 +57,7 @@ export async function r_channel_put(req: any)
 
 	return new Response("OK", { status: 200 });
 }
+
+export async function r_channel_delete(req: any){
+	return new Response("Not implemented", { status: 501 });
+}

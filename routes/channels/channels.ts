@@ -6,6 +6,7 @@ import { mkdir } from "node:fs/promises"
 import { name_check } from "../../commons/commons.ts"
 import { check_auth_token } from "../../commons/commons.ts"
 import config from "../../config.toml";
+import { randomBytes } from "node:crypto"
 
 export async function r_channels_get()
 {
@@ -26,7 +27,7 @@ export async function r_channels_post(req: BunRequest) {
 	const { access_token, username, description } = post;
 	const nickname = post.nickname ?? username;
 	const visible = post.visible ?? true;
-	const language = post.language ?? config.language.default_channel_language ?? "";
+	const language = post.language ?? config.defaults.default_language ?? "";
 
 	// Check if access token is provided
 	if (access_token == null)
@@ -41,7 +42,7 @@ export async function r_channels_post(req: BunRequest) {
 		return new Response("Forbidden", { status: 403 });
 
 	// Create api key for this channel
-	const api_key = await Bun.password.hash(username);
+	const api_key = await Buffer.from(randomBytes(32)).toString("base64")
 
 	// Create new channel in database
 	try
