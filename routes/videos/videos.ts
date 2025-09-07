@@ -130,6 +130,7 @@ export async function r_allvideos_get(req: any) {
 		upload_date: schema.videos.upload_date,
 		prev: schema.videos.prev,
 		next: schema.videos.next,
+		language: schema.videos.language,
 		channel: schema.channels.username
 	}).from(schema.videos).fullJoin(schema.channels, sql`${schema.videos.channel} = ${schema.channels.id}`).where(sql`${schema.channels.visible} = true and ${schema.videos.visible} = true`);
 
