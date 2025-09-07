@@ -21,7 +21,7 @@ Bun.serve({
 	port: PORT,
 	routes: routes,
 	fetch(req){
-		return new Response("OK", { status: 200, headers: { "Content-Type": "text/plain", 'Access-Control-Allow-Origin': '*' } });
+		return new Response("Method Not Allowed", { status: 405, headers: { 'Access-Control-Allow-Origin': '*' } });
 	}
 });
 
