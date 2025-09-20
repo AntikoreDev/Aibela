@@ -2,7 +2,8 @@
 Aibela
 <br>
 <img alt="Discord" src="https://img.shields.io/discord/1380580477504589865?style=for-the-badge&label=Discord&color=5865f2">
-
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/AntikoreDev/Aibela?style=for-the-badge">
+<img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/AntikoreDev/Aibela?style=for-the-badge">
 </h1>
 
 **Aibela** is an **open source video server** that exposes channels and videos through endpoints. This repository acts as the main implementation of a `feeder` of the aibela ecosystem, and can be self-hosted on any Internet server (a computer connected to the internet, SaaS, etc.)
