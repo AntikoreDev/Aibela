@@ -16,6 +16,7 @@ export const videos = sqliteTable("videos", {
 	name: text().notNull(), // Unique identifier to ease access
 	title: text().notNull(), // Video title
 	description: text(), // Video description
+	creation_date: text(), // Creation date. If the video is older than the upload (like music being released a lot ago), use this to specify when it was released originally.
 	upload_date: text().default(sql`(CURRENT_TIMESTAMP)`), // Upload date. Can be changed but in general it shouldn't
 	language: text().default(''), // Video language. Defaults to no language.
 	prev: integer({ mode: "number" }), // Previous video ID in case this is on a series
