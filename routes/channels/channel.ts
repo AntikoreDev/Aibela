@@ -1,7 +1,9 @@
 import { check_auth_token, name_check } from "../../commons/commons.ts";
-import { db } from "../../database/db.ts"
-import * as schema from "../../database/schema.ts"
-import { sql } from "drizzle-orm"
+import { db } from "../../database/db.ts";
+import * as schema from "../../database/schema.ts";
+import { eq, sql } from "drizzle-orm";
+import path from "path";
+import config from "../../config.toml";
 
 export async function r_channel_get(req: any)
 {
@@ -59,5 +61,30 @@ export async function r_channel_put(req: any)
 }
 
 export async function r_channel_delete(req: any){
-	return new Response("Not implemented", { status: 501 });
+	const form_data = await req.formData();
+
+	// Url params
+	const { channel: username  } = req.params;
+
+	// FormData params 
+	const access_token = form_data.get("access_token");
+
+	// Null checks
+	if (access_token == null)
+		return new Response("Unauthorized", { status: 401 });
+
+	if (username == null)
+		return new Response("Bad Request", { status: 400 });
+
+	// Auth Check
+	const is_allowed = check_auth_token(username, access_token) || check_auth_token("admin", access_token);
+	if (!is_allowed)
+		return new Response("Forbidden", { status: 403 });
+	
+	const channel_path = path.join(config.filesystem.server_root, `/channels/${username}`);
+
+	await Bun.file(channel_path).unlink().catch((e) => console.log(`Couldn't delete channel ${username}. ${e}`));
+	await db.delete(schema.channels).where(eq(schema.channels.username, username));
+
+	return new Response("No Content", { status: 204 });
 }
