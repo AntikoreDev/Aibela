@@ -20,6 +20,7 @@ export async function r_videos_post(req: any) {
 	const prev = form_data.get("prev");
 	const next = form_data.get("next");
 	const visible = form_data.get("visible") ?? true;
+	const creation_date = form_data.get("creation_date");
 	const language = form_data.get('language') ?? get_channel_language(channel_name);
 	
 	// Check auth token
@@ -53,6 +54,7 @@ export async function r_videos_post(req: any) {
 			name: name,
 			title: title,
 			description: description,
+			creation_date: creation_date,
 			prev: prev,
 			next: next,
 			visible: visible,
@@ -104,6 +106,7 @@ export async function r_videos_get(req: any)
 		description: schema.videos.description,
 		language: schema.videos.language,
 		upload_date: schema.videos.upload_date,
+		creation_date: schema.videos.creation_date,
 		prev: schema.videos.prev,
 		next: schema.videos.next,
 	}).from(schema.videos).where(sql`${schema.videos.visible} = true and ${schema.videos.channel} = (select ${schema.channels.id} from ${schema.channels} where ${schema.channels.username} = ${channel_name} and ${schema.channels.visible} = true)`);
@@ -128,6 +131,7 @@ export async function r_allvideos_get(req: any) {
 		title: schema.videos.title,
 		description: schema.videos.description,
 		upload_date: schema.videos.upload_date,
+		creation_date: schema.videos.creation_date,
 		prev: schema.videos.prev,
 		next: schema.videos.next,
 		language: schema.videos.language,
