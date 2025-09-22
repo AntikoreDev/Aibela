@@ -50,6 +50,7 @@ export async function r_video_put(req: any){
 	const prev = form_data.get("prev");
 	const next = form_data.get("next");
 	const language = form_data.get("language");
+	const creation_date = form_data.get("creation_date");
 
 	let visible = form_data.get("visible");
 	visible = (visible == "false") ? false : true;
@@ -79,6 +80,9 @@ export async function r_video_put(req: any){
 
 	if (language != null)
 		await db.update(schema.videos).set({ language:language }).where(sql`${schema.videos.id} = ${video_id}`);
+
+	if (creation_date != null)
+		await db.update(schema.videos).set({ creation_date:creation_date }).where(sql`${schema.videos.id} = ${video_id}`);
 
 	if (visible != null)
 	{
