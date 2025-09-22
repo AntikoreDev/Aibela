@@ -3,7 +3,7 @@ import path from "path";
 import { db } from "../../database/db.ts";
 import * as schema from "../../database/schema.ts";
 import { check_auth_token } from "../../commons/commons.ts";
-import { sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { randomBytes } from "crypto";
 
 export async function r_video_get(req: any){
@@ -105,5 +105,32 @@ export async function r_video_put(req: any){
 
 
 export async function r_video_delete(req: any){
-	return new Response("Not implemented", { status: 501 });
+	const form_data = await req.formData();
+
+	// Url params
+	const { channel: username, video: video_id  } = req.params;
+
+	// FormData params 
+	const access_token = form_data.get("access_token");
+
+	// Null checks
+	if (access_token == null)
+		return new Response("Unauthorized", { status: 401 });
+
+	if (username == null || video_id == null)
+		return new Response("Bad Request", { status: 400 });
+
+	// Auth Check
+	const is_allowed = check_auth_token(username, access_token) || check_auth_token("admin", access_token);
+	if (!is_allowed)
+		return new Response("Forbidden", { status: 403 });
+	
+	const video_path = path.join(config.filesystem.server_root, `/channels/${username}/videos/${video_id}.mp4`);
+	const thumb_path = path.join(config.filesystem.server_root, `/channels/${username}/thumbnails/${video_id}.png`);
+
+	await Bun.file(video_path).unlink().catch((e) => console.log(`Couldn't delete video ${video_id}. ${e}`));
+	await Bun.file(thumb_path).unlink().catch((e) => console.log(`Couldn't delete thumbnail ${video_id}. ${e}`));
+	await db.delete(schema.videos).where(and(eq(schema.videos.id, video_id), eq(schema.videos.channel, username)));
+
+	return new Response("No Content", { status: 204 });
 }
