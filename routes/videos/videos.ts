@@ -60,7 +60,7 @@ export async function r_videos_post(req: any) {
 			visible: visible,
 			access_key: access_key,
 			language: language,
-			channel: channel.id,
+			channel: channel.id
 		}
 	]);	
 
