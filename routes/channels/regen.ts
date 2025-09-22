@@ -30,7 +30,7 @@ export async function r_regen_put(req: any) {
 	{
 		await db.update(schema.channels).set({ api_key: api_key }).where(sql`${schema.channels.username} = ${channel}`);
 	} catch (error) {
-		return new Response("Bad Request", { status: 400 });
+		return new Response("Internal Server Error", { status: 500 });
 	}
 
 	// Return created channel data
