@@ -19,6 +19,7 @@ export async function r_video_info_get(req: any){
 		title: schema.videos.title,
 		description: schema.videos.description,
 		upload_date: schema.videos.upload_date,
+		creation_date: schema.videos.creation_date,
 		prev: schema.videos.prev,
 		next: schema.videos.next,
 		language: schema.videos.language
